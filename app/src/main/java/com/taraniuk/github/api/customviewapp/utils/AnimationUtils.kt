@@ -1,10 +1,10 @@
-package com.taraniuk.github.api.customviewapp.ui.main.viewModel
+package com.taraniuk.github.api.customviewapp.utils
 
 import android.animation.ObjectAnimator
 import android.graphics.Path
 import android.view.View
 
-class MainViewModel {
+class AnimationUtils {
 
     lateinit var view: View
     private var path = Path()
@@ -18,7 +18,6 @@ class MainViewModel {
     }
 
     private fun move() {
-
         ObjectAnimator.ofFloat(view, View.X, View.Y, path).apply {
             duration = 4000
             start()

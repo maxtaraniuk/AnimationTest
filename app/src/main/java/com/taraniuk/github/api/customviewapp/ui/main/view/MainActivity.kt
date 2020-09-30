@@ -3,22 +3,20 @@ package com.taraniuk.github.api.customviewapp.ui.main.view
 import android.content.res.Resources
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.taraniuk.github.api.customviewapp.databinding.ActivityMainBinding
-import com.taraniuk.github.api.customviewapp.ui.main.viewModel.MainViewModel
+import com.taraniuk.github.api.customviewapp.R
+import com.taraniuk.github.api.customviewapp.utils.AnimationUtils
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-
-    private val viewModel = MainViewModel()
+    private val animationUtils = AnimationUtils()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        viewModel.view = binding.romb
-        viewModel.start(width(), height())
+        setContentView(R.layout.activity_main)
+        animationUtils.view = romb
+        animationUtils.start(width(), height())
     }
 
     private fun width(): Float {
