@@ -3,6 +3,7 @@ package com.taraniuk.github.api.customviewapp.utils
 import android.animation.ObjectAnimator
 import android.graphics.Path
 import android.view.View
+import android.view.animation.Animation
 
 class AnimationUtils {
 
@@ -21,7 +22,7 @@ class AnimationUtils {
         ObjectAnimator.ofFloat(view, View.X, View.Y, path).apply {
             duration = 4000
             start()
-        }
+        }.repeatCount = Animation.INFINITE
     }
 
     fun start(width: Float, height: Float) {
